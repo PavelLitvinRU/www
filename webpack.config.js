@@ -6,15 +6,14 @@ var resolve = (p) => path.resolve(__dirname, p)
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: resolve('./dist'),
-    publicPath: '/dist/',
+    path: resolve('./html/dist'),
     filename: 'build.js'
   },
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'public': resolve('./public')
+      'public': resolve('./html/public')
     }
   },
   module: {
