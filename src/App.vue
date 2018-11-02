@@ -8,12 +8,12 @@
         color="orange"
         large
       >
-        <span slot="icon">JL</span>
+        <span slot="icon">?</span>
         <v-text-field
           v-model="input"
           hide-details
           flat
-          label="Leave a comment..."
+          label="Пиши..."
           solo
           @keydown.enter="comment"
         >
@@ -23,7 +23,7 @@
               depressed
               @click="comment"
             >
-              Post
+              Запомнить
             </v-btn>
           </template>
         </v-text-field>
@@ -50,7 +50,7 @@
         class="mb-4"
         hide-dot
       >
-        <span>TODAY</span>
+        <span>За сегодня</span>
       </v-timeline-item>
     </v-timeline>
   </v-container>
@@ -65,10 +65,9 @@
       input: null,
       nonce: 0
     }),
-
     computed: {
       timeline () {
-        return this.events.slice().reverse()
+        return this.events
       }
     },
 
@@ -82,9 +81,10 @@
             return ` ${contents.split(' ').map(v => v.charAt(0)).join('')}`
           })
         })
-        localStorage.events = this.events
+        localStorage.evn = this.events
         this.input = null
       }
     }
+  }
   
 </script>
