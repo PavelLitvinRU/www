@@ -1,10 +1,5 @@
 <template>
-<v-dark>
- <v-parallax
-    dark
-    src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-    height="1000"
-  >
+<v-app dark>
    <v-container style="max-width: 600px;">
     <v-timeline dense clipped>
       <v-timeline-item
@@ -59,8 +54,7 @@
       </v-timeline-item>
     </v-timeline>
   </v-container>
-  </v-parallax>
-</v-dark>
+</v-app>
    
 </template>
 
@@ -92,5 +86,5 @@
         this.input = null
       }
     }
-  }
+  
 </script>
