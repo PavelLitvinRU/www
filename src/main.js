@@ -2,37 +2,31 @@ require('../node_modules/vuetify/src/stylus/app.styl')
 
 import Vue from 'vue'
 import {
-    Vuetify,
-    VApp,
-    VNavigationDrawer,
-    VFooter,
-    VList,
-    VBtn,
-    VIcon,
-    VGrid,
-    VToolbar,
-    VParallax,
-    VTimeline,
-    VChip,
-    VTextField,
-    transitions
+  Vuetify,
+  VApp,
+  VNavigationDrawer,
+  VFooter,
+  VList,
+  VBtn,
+  VIcon,
+  VGrid,
+  VToolbar,
+  transitions
 } from 'vuetify'
+import { store } from './store';
+import { router } from './helpers';
 import App from './App.vue'
 
 Vue.use(Vuetify, {
     components: {
-        VApp,
-        VNavigationDrawer,
-        VFooter,
-        VList,
-        VBtn,
-        VIcon,
-        VGrid,
-        VToolbar,
-        VParallax,
-        VTimeline,
-        VChip,
-        VTextField,
+      VApp,
+      VNavigationDrawer,
+      VFooter,
+      VList,
+      VBtn,
+      VIcon,
+      VGrid,
+      VToolbar,
         transitions
     },
     theme: {
@@ -46,7 +40,12 @@ Vue.use(Vuetify, {
     }
 })
 
+import { configureFakeBackend } from './helpers';
+configureFakeBackend();
+
 new Vue({
-    el: '#app',
-    render: h => h(App)
+  el: '#app',
+  router,
+  store,
+  render: h => h(App)
 })
