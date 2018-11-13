@@ -11,41 +11,48 @@ import {
   VIcon,
   VGrid,
   VToolbar,
+  VDivider,
+  VDataIterator,
+  VImg,
+  VMenu,
   transitions
 } from 'vuetify'
-import { store } from './store';
-import { router } from './helpers';
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+import store from './store'
 import App from './App.vue'
 
+Vue.use(VueAxios, axios)
 Vue.use(Vuetify, {
-    components: {
-      VApp,
-      VNavigationDrawer,
-      VFooter,
-      VList,
-      VBtn,
-      VIcon,
-      VGrid,
-      VToolbar,
-        transitions
-    },
-    theme: {
-        primary: '#ee44aa',
-        secondary: '#424242',
-        accent: '#82B1FF',
-        error: '#FF5252',
-        info: '#2196F3',
-        success: '#4CAF50',
-        warning: '#FFC107'
-    }
+  components: {
+    VApp,
+    VNavigationDrawer,
+    VFooter,
+    VList,
+    VBtn,
+    VIcon,
+    VGrid,
+    VToolbar,
+    VDivider,
+    VDataIterator,
+    VImg,
+    VMenu,
+    transitions
+  },
+  theme: {
+    primary: '#ee44aa',
+    secondary: '#424242',
+    accent: '#82B1FF',
+    error: '#FF5252',
+    info: '#2196F3',
+    success: '#4CAF50',
+    warning: '#FFC107'
+  }
 })
-
-import { configureFakeBackend } from './helpers';
-configureFakeBackend();
 
 new Vue({
   el: '#app',
-  router,
   store,
   render: h => h(App)
 })

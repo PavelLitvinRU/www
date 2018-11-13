@@ -1,16 +1,13 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-import { alert } from './alert.module';
-import { authentication } from './authentication.module';
-import { users } from './users.module';
+Vue.use(Vuex)
 
-Vue.use(Vuex);
+const store = () => new Vuex.Store({
 
-export const store = new Vuex.Store({
-    modules: {
-        alert,
-        authentication,
-        users
+    state: {
+        changeIcao: {}
     }
-});
+})
+
+export default store
